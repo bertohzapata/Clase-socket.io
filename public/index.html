@@ -23,10 +23,11 @@
             console.log('Perdimos conexión con el servidor');
         });
 
-        socket.emit('enviarMensaje', {
+        var usuario = {
             usuario: 'Humberto',
-            mensaje: 'Hola Mundo'
-        });
+            mensaje: 'Mi nombre es Humberto'
+        }
+        socket.emit('enviarMensaje', usuario);
 
         socket.on('enviarMensaje', function(mensaje) {
             console.log(mensaje);

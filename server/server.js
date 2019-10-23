@@ -27,6 +27,8 @@ io.on('connect', (client) => {
 
     client.on('enviarMensaje', (mensaje) => {
         console.log(mensaje);
+
+        client.broadcast.emit('enviarMensaje', mensaje);
     });
 
     client.emit('enviarMensaje', {
